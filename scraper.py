@@ -21,5 +21,20 @@ def display_jobs(jobs):
 if __name__ == "__main__":
     url = "https://realpython.github.io/fake-jobs/"
     job_list = fetch_jobs(url)
-    display_jobs(job_list)
+
+    while True:
+        print('\nPlease select an option:\n')
+        print('1. Display jobs')
+        print('2. Send job list to .csv file')
+        print('3. Quit')
+
+        choice = int(input('\nEnter your choice: '))
+
+        if choice == 1:
+            display_jobs(job_list)
+        elif choice == 2:
+            break #update with new function in th future
+        elif choice == 3:
+            break
+    print('Happy job hunting!')
 
