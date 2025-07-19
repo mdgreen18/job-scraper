@@ -6,9 +6,9 @@ def fetch_jobs(url):
     soup = BeautifulSoup(response.content, "html.parser")
     
     jobs = []
-    for job in soup.select("section.jobs li"):
-        title = job.select_one("h2")
-        company = job.select_one("h3")
+    for job in soup.select("div.card"):
+        title = job.select_one("h2.title")
+        company = job.select_one("h3.company")
         if title and company:
             jobs.append((title.text.strip(), company.text.strip()))
     return jobs
